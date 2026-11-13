@@ -1,4 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import snakePlantImage from '../images/snake-plant.jpg';
+import monsteraImage from '../images/monstera.jpg';
+import peaceLilyImage from '../images/peace-lily.jpg';
+import goldenPothosImage from '../images/golden-pothos.jpg';
+import aloeVeraImage from '../images/aloe-vera.jpg';
+import zzPlantImage from '../images/zz-plant.jpg';
 
 const initialState = {
   plants: [
@@ -8,7 +14,7 @@ const initialState = {
       category: 'Indoor Plants',
       price: 350,
       description: 'A beautiful, low-maintenance indoor plant.',
-      image: ''
+      image: snakePlantImage
     },
     {
       id: 2,
@@ -16,7 +22,7 @@ const initialState = {
       category: 'Tropical Plants',
       price: 550,
       description: 'A tropical plant with beautiful split leaves.',
-      image: ''
+      image: monsteraImage
     },
     {
       id: 3,
@@ -24,7 +30,7 @@ const initialState = {
       category: 'Flowering Plants',
       price: 400,
       description: 'An elegant plant with lovely white flowers.',
-      image: ''
+      image: peaceLilyImage
     },
     {
       id: 4,
@@ -32,7 +38,7 @@ const initialState = {
       category: 'Hanging Plants',
       price: 250,
       description: 'A lovely trailing plant for your home.',
-      image: ''
+      image: goldenPothosImage
     },
     {
       id: 5,
@@ -40,7 +46,7 @@ const initialState = {
       category: 'Succulents',
       price: 200,
       description: 'A popular succulent with thick green leaves.',
-      image: ''
+      image: aloeVeraImage
     },
     {
       id: 6,
@@ -48,7 +54,7 @@ const initialState = {
       category: 'Indoor Plants',
       price: 450,
       description: 'A hardy plant with glossy green leaves.',
-      image: ''
+      image: zzPlantImage
     }
   ]
 };
