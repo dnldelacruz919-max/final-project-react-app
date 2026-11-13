@@ -1,60 +1,316 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f8f2;
+  color: #263b2b;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  background-color: #244b32;
+  color: white;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.cart-link {
+  font-weight: bold;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+  text-align: center;
+  padding: 110px 20px;
+  background-color: #e5efdf;
+}
+
+.hero-label {
+  color: #477b4e;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.hero-section h1 {
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #244b32;
+}
+
+.hero-section p {
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #477b4e;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero-button:hover {
+  background-color: #315e39;
+}
+
+/* SECTION HEADINGS */
+
+.products-section,
+.cart-section {
+  padding: 75px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading p {
+  color: #668b5c;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+/* PLANT GRID */
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.plant-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.plant-image {
+  height: 220px;
+  background-color: #e5efdf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plant-image span {
+  font-size: 70px;
+}
+
+.plant-details {
+  padding: 22px;
+}
+
+.plant-category {
+  color: #668b5c;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.plant-details h3 {
+  margin-bottom: 10px;
+}
+
+.plant-description {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 42px;
+}
+
+.plant-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.plant-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #315e39;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.plant-card-bottom button {
+  background-color: #477b4e;
+  color: white;
+  padding: 11px 15px;
+}
+
+.plant-card-bottom button:hover {
+  background-color: #315e39;
+}
+
+/* SHOPPING CART */
+
+.cart-section {
+  background-color: #eaf1e5;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 30px;
+}
+
+.cart-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.cart-item {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-item-info p {
+  margin-top: 8px;
+  color: #668b5c;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity-controls button {
+  background-color: #477b4e;
+  color: white;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.item-total {
+  font-weight: bold;
+}
+
+.remove-button {
+  background-color: #a94442;
+  color: white;
+  padding: 9px 12px;
+}
+
+.cart-summary {
+  background-color: white;
+  padding: 25px;
+  text-align: right;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.cart-summary h3 {
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #244b32;
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+  line-height: 1.8;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 18px;
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f8f2;
-    color: #263b2b;
+
+  .nav-links {
+    gap: 18px;
   }
-  
-  .App {
-    min-height: 100vh;
-  }
-  
-  header {
-    background-color: #244b32;
-    color: white;
-    padding: 25px 50px;
-    text-align: center;
-  }
-  
-  header h1 {
-    font-size: 32px;
-    margin-bottom: 8px;
-  }
-  
-  header p {
-    font-size: 15px;
-  }
-  
-  main {
-    text-align: center;
-    padding: 100px 20px;
-  }
-  
-  main h2 {
+
+  .hero-section h1 {
     font-size: 36px;
-    margin-bottom: 20px;
   }
-  
-  main p {
-    font-size: 17px;
-    margin-bottom: 30px;
+
+  .plant-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  button {
-    background-color: #477b4e;
-    color: white;
-    border: none;
-    padding: 14px 30px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
+
+  .cart-item {
+    flex-wrap: wrap;
   }
-  
-  button:hover {
-    background-color: #315e39;
+}
+
+@media (max-width: 500px) {
+  .plant-grid {
+    grid-template-columns: 1fr;
   }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .plant-card-bottom {
+    flex-wrap: wrap;
+  }
+}
