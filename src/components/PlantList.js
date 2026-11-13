@@ -1,11 +1,34 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PlantCard from './PlantCard';
+import { setSelectedCategory } from '../redux/plantSlice';
 
 function PlantList() {
   const plants = useSelector(
     state => state.plants.plants
   );
+
+  const dispatch = useDispatch();
+
+    const selectedCategory = useSelector(
+    state => state.plants.selectedCategory
+    );
+
+    const categories = [
+    'All Plants',
+    'Indoor Plants',
+    'Tropical Plants',
+    'Flowering Plants',
+    'Hanging Plants',
+    'Succulents'
+    ];
+
+    const filteredPlants =
+    selectedCategory === 'All Plants'
+    ? plants
+    : plants.filter(
+        plant => plant.category === selectedCategory
+      );
 
   return (
     <section className="products-section" id="products">
@@ -17,8 +40,25 @@ function PlantList() {
         </span>
       </div>
 
+      <div className="category-filters">
+        {categories.map(category => (
+            <button
+            key={category}
+            className={
+                selectedCategory === category
+                ? 'category-button active'
+                : 'category-button'
+            }
+            onClick={() =>
+                dispatch(setSelectedCategory(category))
+            }
+            >
+            {category}
+            </button>
+        ))}
+        </div>
       <div className="plant-grid">
-        {plants.map(plant => (
+      {filteredPlants.map(plant => (
           <PlantCard
             key={plant.id}
             plant={plant}

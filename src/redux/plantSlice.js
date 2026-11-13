@@ -7,6 +7,7 @@ import aloeVeraImage from '../images/aloe-vera.jpg';
 import zzPlantImage from '../images/zz-plant.jpg';
 
 const initialState = {
+    selectedCategory: 'All Plants',
   plants: [
     {
       id: 1,
@@ -62,7 +63,12 @@ const initialState = {
 const plantSlice = createSlice({
   name: 'plants',
   initialState,
-  reducers: {}
+  reducers: {
+    setSelectedCategory: (state, action) => {
+      state.selectedCategory = action.payload;
+    }
+  }
+  
 });
-
+export const { setSelectedCategory } = plantSlice.actions;
 export default plantSlice.reducer;

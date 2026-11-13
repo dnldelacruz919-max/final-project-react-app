@@ -414,3 +414,33 @@ footer p {
     text-align: center;
   }
 }
+
+.category-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 30px 0;
+}
+
+.category-button {
+  padding: 10px 20px;
+  border: 1px solid #2e6b45;
+  border-radius: 25px;
+  background-color: white;
+  color: #2e6b45;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #e5f1e8;
+}
+
+.category-button.active {
+  background-color: #2e6b45;
+  color: white;
+}
